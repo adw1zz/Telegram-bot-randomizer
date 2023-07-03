@@ -6,7 +6,7 @@ const RaffleScheme = new Schema({
     participants: [{type: Number}],
     info: {type: String, required: true},
     creationDate: {type: Date, default: Date.now},
-    timer: {type: Number},
+    timer: {type: Number, required: true},
     winner: {type: Number}
 })
 
