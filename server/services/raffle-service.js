@@ -33,6 +33,17 @@ class RaffleService {
         await raffleModel.findOneAndUpdate({ token }, { ...newData })
     }
 
+    async addParticipant(userTgID, token) {
+        const raffle = await raffleModel.findOne({ token });
+        if (!raffle || raffle.winner) {
+            return false;
+        } else {
+            raffle.participants.push(userTgID);
+            await raffle.save();
+            const raffleDto = new RaffleDto(raffle);
+            return raffleDto;
+        }
+    }
 }
 
 module.exports = new RaffleService(); 

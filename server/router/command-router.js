@@ -13,6 +13,6 @@ module.exports = function (bot) {
         if (fnc) {
             return await fnc(bot, msg);
         }
-
+        
     })
 }

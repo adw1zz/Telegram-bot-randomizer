@@ -6,6 +6,7 @@ module.exports = class RaffleDto {
     info;
     creationDate;
     timer;
+    winner;
 
     constructor(model) {
        this.id = model.id;
@@ -15,5 +16,6 @@ module.exports = class RaffleDto {
        this.info = model.info;
        this.creationDate = model.creationDate;
        this.timer = model.timer; 
+       this.winner = model.winner;
     }
 }
